@@ -1,4 +1,4 @@
-/***Task1. Remove duplicate members from an array***/
+/***Remove duplicate members from an array***/
 
 //solution 1
 function removeDuplicate(arr){
@@ -18,7 +18,7 @@ function removeDuplicate(arr){
 }
 //////////////////////////////////////////////////////////////
 
-/***Task2. Reverse a string in JavaScript***/
+/***Reverse a string***/
 
 //solution 1
 function reverse(str){ 
@@ -34,7 +34,9 @@ function reverse(str){
     return str.split('').reverse().join('');
 }
 
-/***Task 3. Find the first non repeating char in a string***/
+//////////////////////////////////////////////////////////////
+
+/***Find the first non repeating char in a string***/
 function firstNonRepeatChar(str){
     let obj = {};
     for(let i = 0; i< str.length; i++) {
@@ -46,7 +48,9 @@ function firstNonRepeatChar(str){
     }
 }
 
-/***Task 4. How will you verify a word as palindrome?***/
+//////////////////////////////////////////////////////////////
+
+/***Check if a word is palindrome***/
 
 //solution 1
 function isPalindrome(str){
@@ -63,6 +67,54 @@ function isPalindrome(str){
     return true;
 }
 
+//////////////////////////////////////////////////////////////
+
+/***Remove Every Vowel from a String***/
+
+//solution 1
+function removeVowels(str) {
+	return str.replace(/[aeiou]/ig, '');
+}
+
+//solution 2
+function removeVowels(str) {
+	let vowels = ['a','e','i','o','u','A','E','I','O','U'];
+    let arr = str.split('');
+    let res = [];
+    for(let i = 0; i<arr.length; i++) {
+        if(!vowels.includes(arr[i])) {
+            res.push(arr[i]);
+        }
+    }
+    return res.join('');
+}
+
+//////////////////////////////////////////////////////////////
+
+/***Create a function that returns the number of hashes and pluses in a string.***/
+
+function hashPlusCount(str) {
+	let obj = {
+        '#':0,
+        '+':0
+    }
+    for (let i=0; i<str.length; i++) {
+        if(str[i]==='#') { obj['#']++ }
+        if(str[i]==='+') { obj['+']++ }
+    }
+    return [obj['#'], obj['+']];
+}
+
+//////////////////////////////////////////////////////////////
+
+/***Numbers to Arrays and Vice Versa***/
+function toArray(num) {
+	return num.toString().split('').map(el => Number(el))
+}
+
+function toNumber(arr) {
+	return Number(arr.join(''));
+}
 
 
 

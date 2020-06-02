@@ -116,8 +116,62 @@ function toNumber(arr) {
 	return Number(arr.join(''));
 }
 
+//////////////////////////////////////////////////////////////
 
+/***Create a function that takes an array of numbers and returns the mean value.Round to two decimal places.***/
 
+function mean(arr) {
+	return +(arr.reduce((acc, cur) => acc + cur, 0)/arr.length).toFixed(2)
+}
+
+//////////////////////////////////////////////////////////////
+
+/***Write a function that takes a string as an argument and returns the left most digit in the string.***/
+
+//solution 1
+function leftDigit(num) {
+	return num.match(/\d/) ? +num.match(/\d/) : 'No digits in a string'
+}
+
+//solution 2
+function leftDigit(num) {
+    let res = num.split('').find(el => !isNaN(el));
+    return res ? +res : 'No digits in a string';
+}
+
+//////////////////////////////////////////////////////////////
+
+/***Sort an Array by String Length***/
+
+function sortByLength(arr) {
+	return [...arr].sort((a,b)=>a.length - b.length)
+}
+
+//////////////////////////////////////////////////////////////
+
+/***Create a function that returns the number of decimal places a number (given as a string) has.***/
+
+function getDecimalPlaces(num) {
+	return num.split('.')[1] ? num.split('.')[1].length : 0
+}
+
+//////////////////////////////////////////////////////////////
+
+/***Create a function that takes a string as input and capitalizes a letter if its 
+    ASCII code is even and returns its lower case version if its ASCII code is odd.***/
+
+function asciiCapitalize(str) {
+	let res = '';
+	for(let i = 0; i< str.length;i++) {
+        if(str.charCodeAt(i) % 2 !== 0) {
+            res += str[i].toLowerCase();
+        } else {
+            res += str[i].toUpperCase();
+        }
+        
+    }
+    return res;
+}
 
 
 

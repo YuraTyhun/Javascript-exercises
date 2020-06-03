@@ -173,9 +173,37 @@ function asciiCapitalize(str) {
     return res;
 }
 
+//////////////////////////////////////////////////////////////
 
+/***Given an array of 10 numbers, return the maximum possible total made by summing just 5 of the 10 numbers.***/
 
+// solution 1
+function maxTotal(nums) {
+	return [...nums].sort((a,b)=>b-a).filter((el, index) => index <= 4).reduce((acc,cur)=>acc+cur,0)
+}
 
+// solution 2
+function maxTotal(nums) {
+	return [...nums].sort((a,b)=>b-a).slice(0,5).reduce((acc,cur)=>acc+cur,0);
+}
 
+// solution 3
+function maxTotal(nums) {
+	let arr = [...nums].sort((a,b) => b - a);
+    let res = []; let sum = 0;
+    for (const [index, el] of arr.entries()) {
+        if(index <= 4) res.push(el);
+        else break;
+    }
+
+    for (let el of res) {
+        sum += el;
+    }
+    return sum;
+}
+
+//////////////////////////////////////////////////////////////
+
+/******/
 
 
